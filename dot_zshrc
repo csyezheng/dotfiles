@@ -1,0 +1,58 @@
+LANGUAGE="en"
+
+bindkey "^[[7~" beginning-of-line
+bindkey "^[[8~" end-of-line
+bindkey "^[[3~" delete-char
+
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
+
+# # key bindings
+# bindkey "^[[1~" beginning-of-line
+# bindkey "^[[4~" end-of-line
+# bindkey "^[[5~" beginning-of-history
+# bindkey "^[[6~" end-of-history
+# bindkey "^[[2~" quoted-insert
+# bindkey "^[[5C" forward-word
+# bindkey "^[Oc" emacs-forward-word
+# bindkey "^[[5D" backward-word
+# bindkey "^[Od" emacs-backward-word
+# bindkey "^[e[C" forward-word
+# bindkey "^[e[D" backward-word
+# bindkey "^H" backward-delete-word
+# # for rxvt
+# 
+# # for non RH/Debian xterm, can't hurt for RH/DEbian xterm
+# bindkey "^[[OH" beginning-of-line
+# bindkey "^[[OF" end-of-line
+# # for freebsd console
+# bindkey "^[[H" beginning-of-line
+# bindkey "^[[F" end-of-line
+# # completion in the middle of a line
+# bindkey '^i' expand-or-complete-prefix
+
+export QT_STYLE_OVERRIDE=gtk2
+
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
+___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
+export GOPATH=$HOME/code/go
+
+alias dotfiles='/usr/bin/git --git-dir=/home/ye/code/personal/dotfiles/ --work-tree=/home/ye'
+alias blogpost='cd $HOME/documents/personal/blog/content/post'
+alias clash='cfw'
+alias goland='/opt/GoLand-2021.2.5/bin/goland.sh'
+alias datagrip='/opt/DataGrip-2023.2.3/bin/datagrip.sh'
+
+DEBEMAIL="csyezheng@gmail.com"
+DEBFULLNAME="Ye Zheng"
+export DEBEMAIL DEBFULLNAME
+
+# DEBUILD_DPKG_BUILDPACKAGE_OPTS="-i -I -us -uc"
+# DEBUILD_LINTIAN_OPTS="-i -I --show-overrides"
+DEBSIGN_KEYID="CC651C8BBEE533472970357E056D8F1DC853F8F0"
+export DEBSIGN_KEYID
+
+export DB_SSLMODE="disable"

@@ -1,0 +1,5 @@
+# Start i3
+exec i3
+
+# Restore the background 
+~/.fehbg &

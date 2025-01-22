@@ -1,0 +1,65 @@
+[song]
+command=$HOME/.config/i3blocks/scripts/current_song.sh
+interval=10
+color=#00ff00
+
+# Guess the weather hourly
+[weather]
+command=curl -Ss https://wttr.in/Fuzhou?format=%C+%t | xargs echo
+interval=3600
+color=#A4C2F4
+
+# CPU usage block
+[CPU]
+command=top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1 "%"}'
+interval=5
+label=CPU: 
+color=#F79494
+
+# GPU usage block
+[GPU]
+command=nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits
+interval=5
+label=GPU: %
+color=#F79494
+
+# Memory usage block
+[Memory]
+command=free -h | grep Mem | awk '{print $3 "/" $2}'
+interval=10
+label=Memory: 
+color=#00ff00
+
+[Disk]
+command=df -h / | awk 'NR==2 {print $5}'
+interval=60
+label=Disk: 
+color=#00ffff
+
+# CPU temperature block
+[temp]
+command=cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000 "°C"}'
+interval=10
+label=Temp: 
+
+# Network speed block
+[Network]
+command=$HOME/.config/i3blocks/scripts/bandwidth.sh -i  -o  
+interval=5
+label=  
+# color=#A4C2F4
+
+[Volume]
+command=amixer get Master | awk -F'[][]' 'NR==5 {print $2}'
+interval=1
+label=Volume: 
+
+[battery]
+command=$HOME/.config/i3blocks/scripts/battery.sh
+interval=30
+color=#ff6666
+
+# Update time every 5 seconds
+[datetime]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=5

@@ -1,0 +1,9 @@
+[Unit]
+Description=Run backup enabled systemd units list daily and on boot
+
+[Timer]
+OnBootSec=10min
+OnUnitActiveSec=1d
+
+[Install]
+WantedBy=timers.target

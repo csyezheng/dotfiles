@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup pacman database
+
+[Service]
+Type=oneshot
+ExecStart=tar -cjf /data/backup/pacman_database/pacman_database.tar.bz2 /var/lib/pacman/local
+
+[Install]
+WantedBy=default.target
