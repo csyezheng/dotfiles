@@ -38,7 +38,11 @@ configuration {
 /*	tokenize: true;*/
 /*	m: "-5";*/
 /*	filter: ;*/
-	dpi: 192;
+{{- if eq .chezmoi.hostname "arch-laptop" }}
+        dpi: {{ .chezmoi.config.data.XftDPI.laptop | default "96" }}
+{{- else if eq .chezmoi.hostname "arch-desktop" }}
+        dpi: {{ .chezmoi.config.data.XftDPI.desktop | default "96" }}
+{{- end }}
 /*	threads: 0;*/
 /*	scroll-method: 0;*/
 /*	window-format: "{w}    {c}   {t}";*/
