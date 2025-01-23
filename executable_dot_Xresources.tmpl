@@ -1,6 +1,6 @@
-{{- if eq .chezmoi.config.data.machine.name "laptop" -}}
+{{- if eq .chezmoi.hostname "arch-laptop" -}}
     Xft.dpi: {{ .chezmoi.config.data.XftDPI.laptop | default "96" -}}
-{{- else if eq .chezmoi.config.data.machine.name "desktop" -}}
+{{- else if eq .chezmoi.hostname "arch-desktop" -}}
     Xft.dpi: {{ .chezmoi.config.data.XftDPI.desktop | default "96" -}}
 {{- end }}
 Xft.autohint: 0
@@ -9,8 +9,8 @@ Xft.hintstyle:  hintfull
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-{{ if eq .machine.name "laptop" -}}
+{{ if eq .chezmoi.hostname "arch-laptop" -}}
     rofi.dpi: {{ .XftDPI.laptop | default "96" -}}
-{{- else if eq .machine.name "desktop" -}}
+{{- else if eq .chezmoi.hostname "arch-desktop" -}}
     rofi.dpi: {{ .XftDPI.desktop | default "96" -}}
 {{- end }}
