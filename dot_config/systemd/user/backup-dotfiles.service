@@ -1,0 +1,11 @@
+[Unit] 
+Description=Backup Dotfiles 
+Wants=network-online.target 
+After=network-online.target 
+
+[Service] 
+Type=oneshot 
+ExecStart=/home/ye/bin/backup-dotfiles.sh
+
+[Install] 
+WantedBy=default.target

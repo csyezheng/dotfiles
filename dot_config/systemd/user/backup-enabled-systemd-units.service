@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup enabled systemd units list
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'systemctl list-unit-files --state enabled --type timer --type service | tail -n +2 | head -n -2 | cut -d\  -f1 > /home/ye/.enabled-units-list.txt && systemctl list-unit-files --state enabled --type timer --type service --user | tail -n +2 | head -n -2 | cut -d\  -f1 > /home/ye/.enabled-user-units-list.txt'
+
+[Install]
+WantedBy=default.target

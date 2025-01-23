@@ -1,0 +1,7 @@
+[https]
+	proxy = socks5://127.0.0.1:1089
+[user]
+	email = csyezheng@gmail.com
+	name = YeZheng
+[core]
+	autocrlf = input

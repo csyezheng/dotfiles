@@ -1,0 +1,7 @@
+# Set environment variables for Fcitx5
+export GTK_TM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+export QT_STYLE_OVERRIDE=gtk2
+export GTK2_IM_MODULE=fcitx
+export SDL_IM_MODULE=fcitx

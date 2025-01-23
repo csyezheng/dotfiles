@@ -1,0 +1,8 @@
+[Unit] 
+Description=Touchpad Toggle
+
+[Service] 
+ExecStart=/home/ye/bin/touchpad_toggle.sh
+
+[Install] 
+WantedBy=default.target
