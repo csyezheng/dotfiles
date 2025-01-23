@@ -270,7 +270,7 @@ bindsym $mod+Shift+V exec --no-startup-id clipmenu
 bindsym $mod+Shift+P exec --no-startup-id clipmenu -p
 
 # Start Picom (smooth window effects and transparency)
-exec --no-startup-id picom --config $XDG_CONFIG_HOME/picom/picom.conf
+# exec --no-startup-id picom --config $XDG_CONFIG_HOME/picom/picom.conf
 
 # Start xautolock (auto-lock after inactivity)
 # exec --no-startup-id xautolock -time 3 -locker $HOME/bin/lockscreen.sh
